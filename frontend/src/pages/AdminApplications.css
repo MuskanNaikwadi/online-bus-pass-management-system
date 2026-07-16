@@ -1,0 +1,800 @@
+.applications-page {
+    display: flex;
+    min-height: 100vh;
+    background: #f4f6fb;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* ---------- Main content ---------- */
+.applications-page .main-content {
+    flex: 1;
+    padding: 28px 32px;
+    margin-left: 250px;
+    width: calc(100% - 250px);
+}
+
+.back-btn {
+    background: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Topbar (matches AdminDashboard) ---------- */
+.applications-page .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 20px 26px;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+}
+
+.applications-page .page-header h2 {
+    color: #0f172a;
+    font-size: 22px;
+    margin: 0 0 4px;
+}
+
+.applications-page .page-header p {
+    color: #94a3b8;
+    font-size: 13.5px;
+    margin: 0;
+}
+
+.applications-page .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.admin-search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f8fafc;
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: 1px solid #eef1f6;
+    color: #94a3b8;
+    width: 280px;
+}
+
+.admin-search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 13.5px;
+    width: 100%;
+    color: #1e293b;
+}
+
+.applications-page .notification-icon {
+    position: relative;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.applications-page .notification-badge {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    width: 18px;
+    height: 18px;
+    background: #ef4444;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.applications-page .profile-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ---------- Applications panel ---------- */
+.applications-panel {
+    background: white;
+    border-radius: 18px;
+    padding: 24px;
+    margin-top: 22px;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+}
+
+.applications-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.applications-panel-header h3 {
+    margin: 0;
+    color: #0f172a;
+    font-size: 16.5px;
+}
+
+.applications-count {
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+/* ---------- Table ---------- */
+.applications-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid #eef1f6;
+    border-radius: 14px;
+}
+
+.applications-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.applications-table thead {
+    background: #f8fafc;
+}
+
+.applications-table th {
+    text-align: left;
+    padding: 14px 18px;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.applications-table td {
+    padding: 14px 18px;
+    font-size: 13.5px;
+    color: #1e293b;
+    border-top: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+.applications-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.applicant-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.applicant-avatar-sm {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 50%;
+    background: #eff6ff;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.route-cell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    color: #475569;
+    white-space: nowrap;
+}
+
+.status-pill-table {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.status-pill-table.pending {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.status-pill-table.active {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.status-pill-table.rejected {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.doc-thumb-btn {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.doc-thumb-btn img {
+    width: 46px;
+    height: 46px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    transition: 0.2s;
+}
+
+.doc-thumb-btn:hover img {
+    transform: scale(1.06);
+    border-color: #93c5fd;
+}
+
+.no-doc-text {
+    font-size: 12px;
+    color: #cbd5e1;
+}
+
+.table-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.table-view-btn,
+.table-approve-btn,
+.table-reject-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 11.5px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+
+.table-view-btn {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.table-view-btn:hover {
+    background: #e2e8f0;
+}
+
+.table-approve-btn {
+    background: #16a34a;
+    color: white;
+}
+
+.table-approve-btn:hover:not(:disabled) {
+    background: #15803d;
+}
+
+.table-reject-btn {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.table-reject-btn:hover:not(:disabled) {
+    background: #fecaca;
+}
+
+.table-approve-btn:disabled,
+.table-reject-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ---------- Loading / Empty ---------- */
+.admin-loading {
+    text-align: center;
+    padding: 60px 0;
+    color: #94a3b8;
+}
+
+.admin-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e2e8f0;
+    border-top-color: #2563eb;
+    border-radius: 50%;
+    margin: 0 auto 14px;
+    animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.empty-card {
+    text-align: center;
+    padding: 60px 20px;
+    color: #cbd5e1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.empty-card h3 {
+    color: #1e293b;
+    margin: 0;
+}
+
+.empty-card p {
+    color: #94a3b8;
+    font-size: 13.5px;
+    margin: 0;
+}
+
+/* ---------- Document preview modal ---------- */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeIn 0.2s ease;
+}
+
+.doc-preview-modal {
+    background: white;
+    border-radius: 20px;
+    width: 460px;
+    max-width: 92vw;
+    max-height: 88vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    animation: popIn 0.25s ease;
+}
+
+.doc-preview-modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.doc-preview-modal .modal-header h2 {
+    margin: 0;
+    font-size: 15.5px;
+    color: #0f172a;
+}
+
+.close-btn {
+    border: none;
+    background: #f1f5f9;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.close-btn:hover {
+    background: #e2e8f0;
+}
+
+.doc-preview-body {
+    padding: 20px 24px;
+}
+
+.doc-preview-body img {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #f1f5f9;
+}
+
+.doc-preview-footer {
+    padding: 0 24px 22px;
+}
+
+.doc-preview-footer .table-view-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .applications-page .sidebar {
+        display: none;
+    }
+
+    .applications-page .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 18px;
+    }
+
+    .admin-search-box {
+        width: 100%;
+    }
+
+    .applications-page .topbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .applications-page .topbar-right {
+        flex-wrap: wrap;
+    }
+}
+
+/* ---------- Application cards (matches AdminDashboard) ---------- */
+.applications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 640px;
+    overflow-y: auto;
+}
+
+.application-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 18px;
+    border: 1px solid #f1f5f9;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.application-card:hover {
+    border-color: #bfdbfe;
+    background: #f8fafc;
+    transform: translateX(2px);
+}
+
+.application-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.application-avatar {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 50%;
+    background: #eff6ff;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.application-left h3 {
+    margin: 0 0 3px;
+    font-size: 14px;
+    color: #1e293b;
+}
+
+.application-left p {
+    margin: 0 0 3px;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.application-left span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11.5px;
+    color: #94a3b8;
+}
+
+.application-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.pending-badge {
+    background: #fef3c7;
+    color: #d97706;
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.open-text {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11.5px;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+/* ---------- Review Modal (same style as AdminDashboard) ---------- */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeIn 0.2s ease;
+}
+
+.application-modal {
+    background: white;
+    border-radius: 22px;
+    width: 480px;
+    max-width: 92vw;
+    max-height: 88vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    animation: popIn 0.25s ease;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 26px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 17px;
+    color: #0f172a;
+}
+
+.close-btn {
+    border: none;
+    background: #f1f5f9;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.close-btn:hover {
+    background: #e2e8f0;
+}
+
+.modal-body {
+    padding: 24px 26px;
+}
+
+.applicant-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.applicant-avatar {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.applicant-header h2 {
+    margin: 0 0 3px;
+    font-size: 17px;
+    color: #0f172a;
+}
+
+.applicant-header p {
+    margin: 0;
+    font-size: 12.5px;
+    color: #64748b;
+}
+
+.applicant-header span {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.details-section h3,
+.document-section h3 {
+    font-size: 13.5px;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 13px;
+}
+
+.detail-row strong {
+    color: #64748b;
+    font-weight: 600;
+}
+
+.detail-row span {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.status.pending {
+    background: #fef3c7;
+    color: #d97706;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11.5px;
+}
+
+.document-section {
+    margin-top: 20px;
+}
+
+.view-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: white;
+    color: #2563eb;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.view-btn:hover {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+}
+
+.verify-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 14px 16px;
+    background: #fffbeb;
+    border-radius: 12px;
+}
+
+.verify-section label {
+    font-size: 12.5px;
+    color: #92400e;
+    font-weight: 600;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.approve-btn,
+.reject-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.approve-btn {
+    background: #16a34a;
+    color: white;
+}
+
+.approve-btn:hover {
+    background: #15803d;
+}
+
+.reject-btn {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.reject-btn:hover {
+    background: #fecaca;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

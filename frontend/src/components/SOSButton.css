@@ -1,0 +1,204 @@
+.floating-sos-btn {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  border: none;
+  background: #dc2626;
+  color: white;
+  cursor: pointer;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 10px 25px rgba(220,38,38,.45);
+
+  transition: .3s;
+}
+
+.floating-sos-btn:hover{
+  transform:scale(1.08);
+}
+
+.floating-sos-btn svg{
+  font-size:26px;
+}
+
+.floating-sos-btn span{
+  font-size:12px;
+  font-weight:700;
+}
+
+.floating-sos-btn::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  background:rgba(220,38,38,.35);
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+opacity:.8;
+}
+
+100%{
+transform:scale(1.8);
+opacity:0;
+}
+
+}
+
+.sos-overlay{
+
+position:fixed;
+inset:0;
+
+background:rgba(0,0,0,.45);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+z-index:10000;
+
+backdrop-filter:blur(4px);
+
+}
+
+.sos-modal{
+
+position:relative;
+
+width:420px;
+max-width:90%;
+
+background:white;
+
+border-radius:18px;
+
+padding:35px;
+
+text-align:center;
+
+animation:popup .25s ease;
+
+}
+
+@keyframes popup{
+
+from{
+transform:scale(.8);
+opacity:0;
+}
+
+to{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+.close-btn{
+
+position:absolute;
+
+right:18px;
+top:18px;
+
+background:none;
+
+border:none;
+
+font-size:20px;
+
+cursor:pointer;
+
+}
+
+.warning-icon{
+
+width:80px;
+height:80px;
+
+margin:auto;
+
+border-radius:50%;
+
+background:#fee2e2;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:34px;
+
+color:#dc2626;
+
+margin-bottom:20px;
+
+}
+
+.sos-modal h2{
+
+margin-bottom:15px;
+
+}
+
+.sos-modal p{
+
+color:#555;
+line-height:1.7;
+
+}
+
+.modal-buttons{
+
+display:flex;
+
+gap:15px;
+
+margin-top:30px;
+
+}
+
+.cancel-btn,
+.send-btn{
+
+flex:1;
+
+padding:14px;
+
+border:none;
+
+border-radius:10px;
+
+font-size:16px;
+
+cursor:pointer;
+
+font-weight:600;
+
+}
+
+.cancel-btn{
+
+background:#e5e7eb;
+
+}
+
+.send-btn{
+
+background:#dc2626;
+
+color:white;
+
+}

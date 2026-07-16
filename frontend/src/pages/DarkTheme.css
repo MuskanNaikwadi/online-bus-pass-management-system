@@ -1,0 +1,204 @@
+/* ============================================
+   PURPLE DARK THEME — applies across all pages
+   ============================================ */
+
+body.dark-theme {
+  background: #14101f;
+  color: #e4e0f0;
+}
+
+/* ---- Layout shells ---- */
+body.dark-theme .dashboard-container {
+  background: #14101f;
+}
+
+body.dark-theme .sidebar {
+  background: linear-gradient(180deg, #1a1330, #150f26);
+  border-right: 1px solid #2a2145;
+}
+
+body.dark-theme .sidebar li:hover {
+  background: rgba(168, 85, 247, 0.15);
+}
+
+body.dark-theme .sidebar ul li.active,
+body.dark-theme .sidebar .active {
+  background: #7c3aed;
+}
+
+body.dark-theme .logout-item {
+  color: #f87171;
+}
+
+/* ---- Generic white cards -> dark purple cards ---- */
+body.dark-theme .topbar,
+body.dark-theme .welcome-card,
+body.dark-theme .active-pass-card,
+body.dark-theme .stat-card,
+body.dark-theme .pass-card,
+body.dark-theme .activity-card,
+body.dark-theme .no-pass-card,
+body.dark-theme .form-card,
+body.dark-theme .payment-panel,
+body.dark-theme .notif-panel,
+body.dark-theme .notif-item,
+body.dark-theme .profile-hero,
+body.dark-theme .detail-card,
+body.dark-theme .summary-card,
+body.dark-theme .receipt-card,
+body.dark-theme .safety-card,
+body.dark-theme .safety-hero,
+body.dark-theme .settings-card,
+body.dark-theme .payment-stat-card,
+body.dark-theme .pass-wrapper,
+body.dark-theme .no-payment,
+body.dark-theme .no-notif {
+  background: #1e1733 !important;
+  color: #e4e0f0 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+  border-color: #2f2650 !important;
+}
+
+body.dark-theme .payment-table-wrapper {
+  border-color: #2f2650 !important;
+}
+
+body.dark-theme .payment-table thead {
+  background: #241c40 !important;
+}
+
+body.dark-theme .payment-table td {
+  border-top-color: #2a2145 !important;
+  color: #e4e0f0 !important;
+}
+
+body.dark-theme .payment-table tbody tr:hover {
+  background: #241c40 !important;
+}
+
+/* ---- Text colors ---- */
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4 {
+  color: #f1edff !important;
+}
+
+body.dark-theme p,
+body.dark-theme span,
+body.dark-theme label {
+  color: #b8b0d4;
+}
+
+body.dark-theme .notif-subtext,
+body.dark-theme .payment-date,
+body.dark-theme .entries-text,
+body.dark-theme .no-payment p,
+body.dark-theme .no-notif p {
+  color: #8b81ab !important;
+}
+
+/* ---- Inputs / selects ---- */
+body.dark-theme input,
+body.dark-theme select,
+body.dark-theme textarea {
+  background: #241c40 !important;
+  color: #e4e0f0 !important;
+  border-color: #372a5c !important;
+}
+
+body.dark-theme .payment-search {
+  background: #241c40 !important;
+}
+
+/* ---- Buttons / accents (purple everywhere) ---- */
+body.dark-theme .apply-btn,
+body.dark-theme .continue-btn,
+body.dark-theme .view-pass-btn,
+body.dark-theme .filter-search-btn,
+body.dark-theme .mark-all-btn,
+body.dark-theme .edit-pill-btn,
+body.dark-theme .save-btn,
+body.dark-theme .apply-first-pass-btn {
+  background: #7c3aed !important;
+  border-color: #7c3aed !important;
+  color: white !important;
+}
+
+body.dark-theme .apply-btn:hover,
+body.dark-theme .continue-btn:hover,
+body.dark-theme .save-btn:hover {
+  background: #6d28d9 !important;
+}
+
+body.dark-theme .stat-card h3,
+body.dark-theme .payment-stat-card h3,
+body.dark-theme .invoice-cell,
+body.dark-theme .page-number.active {
+  color: #a78bfa !important;
+}
+
+body.dark-theme .page-number.active {
+  background: #7c3aed !important;
+}
+
+body.dark-theme .filter-chip.active,
+body.dark-theme .notif-chip.active {
+  background: #7c3aed !important;
+  border-color: #7c3aed !important;
+}
+
+/* ---- Status badges keep readable on dark ---- */
+body.dark-theme .status-badge.active,
+body.dark-theme .table-status-badge.success,
+body.dark-theme .notif-icon-badge.approval {
+  background: #14532d !important;
+  color: #4ade80 !important;
+}
+
+body.dark-theme .status-badge.pending,
+body.dark-theme .table-status-badge.pending,
+body.dark-theme .notif-icon-badge.expiry {
+  background: #78350f !important;
+  color: #fbbf24 !important;
+}
+
+body.dark-theme .status-badge.rejected,
+body.dark-theme .table-status-badge.failed,
+body.dark-theme .notif-icon-badge.rejection {
+  background: #7f1d1d !important;
+  color: #f87171 !important;
+}
+
+body.dark-theme .table-status-badge.refunded,
+body.dark-theme .notif-icon-badge.refund {
+  background: #3b0764 !important;
+  color: #c084fc !important;
+}
+
+/* ---- Modals ---- */
+body.dark-theme .sos-overlay {
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
+body.dark-theme .sos-modal,
+body.dark-theme .payment-modal,
+body.dark-theme .contact-modal,
+body.dark-theme .payment-view-modal,
+body.dark-theme .edit-profile-modal {
+  background: #1e1733 !important;
+  color: #e4e0f0 !important;
+}
+
+/* ---- Dividers ---- */
+body.dark-theme .payment-row,
+body.dark-theme .detail-row,
+body.dark-theme .view-row,
+body.dark-theme .contacts-list .contact-row {
+  border-color: #2a2145 !important;
+}
+
+body.dark-theme .contact-row {
+  background: #241c40 !important;
+  color: #e4e0f0 !important;
+}
