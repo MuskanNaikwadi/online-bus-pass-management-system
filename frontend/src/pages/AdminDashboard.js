@@ -24,6 +24,7 @@ function AdminDashboard() {
   const [documentVerified, setDocumentVerified] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [dashboardStats, setDashboardStats] = useState(null);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
