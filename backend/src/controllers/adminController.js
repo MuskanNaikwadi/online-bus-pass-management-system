@@ -1,4 +1,4 @@
-const User = require("../models/User");
+const User = require("../models/user");
 const BusPass = require("../models/BusPass");
 const Emergency = require("../models/Emergency");
 

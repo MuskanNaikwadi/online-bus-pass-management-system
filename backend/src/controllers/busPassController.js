@@ -643,33 +643,32 @@ const sendSOS = async (req, res) => {
 };
 const updateSettings = async (req, res) => {
     try {
-        const User = require("../models/User");
+        const User = require("../models/user");
 
         const { darkMode, notifications, language, emailAlerts, smsAlerts } = req.body;
 
-        const user = await User.findById(req.user._id);
+        const currentUser = await User.findById(req.user._id);
 
-        if (!user) {
+        if (!currentUser) {
             return res.status(404).json({
                 success: false,
                 message: "User not found",
             });
         }
 
-        if (darkMode !== undefined) user.darkMode = darkMode;
-        if (notifications !== undefined) user.notifications = notifications;
-        if (language !== undefined) user.language = language;
-        if (emailAlerts !== undefined) user.emailAlerts = emailAlerts;
-        if (smsAlerts !== undefined) user.smsAlerts = smsAlerts;
+        if (darkMode !== undefined) currentUser.darkMode = darkMode;
+        if (notifications !== undefined) currentUser.notifications = notifications;
+        if (language !== undefined) currentUser.language = language;
+        if (emailAlerts !== undefined) currentUser.emailAlerts = emailAlerts;
+        if (smsAlerts !== undefined) currentUser.smsAlerts = smsAlerts;
 
-        await user.save();
+        await currentUser.save();
 
         res.status(200).json({
             success: true,
             message: "Settings updated successfully",
-            data: user,
+            data: currentUser,
         });
-
     } catch (error) {
         res.status(500).json({
             success: false,

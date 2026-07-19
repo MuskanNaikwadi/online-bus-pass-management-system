@@ -1,6 +1,6 @@
 // controllers/adminSettingsController.js
 const bcrypt = require("bcryptjs");
-const User = require("../models/User");
+const User = require("../models/user");
 const AdminSettings = require("../models/AdminSettings");
 
 // GET /api/admin/settings
