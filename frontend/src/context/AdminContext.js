@@ -6,7 +6,7 @@ const AdminContext = createContext();
 
 export function getAdminPhotoUrl(photo) {
   if (!photo) return "";
-  return `http://localhost:5000/${photo}`;
+  return `${process.env.REACT_APP_API_URL}/${photo}`;
 }
 
 export function AdminProvider({ children }) {
@@ -17,7 +17,7 @@ export function AdminProvider({ children }) {
       const token = localStorage.getItem("token");
       if (!token) return;
 
-      const res = await axios.get("http://localhost:5000/api/admin/profile", {
+      const res = await axios.get("${process.env.REACT_APP_API_URL}/api/admin/profile", {
         headers: { Authorization: `Bearer ${token}` },
       });
 

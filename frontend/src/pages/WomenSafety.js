@@ -108,7 +108,7 @@ function WomenSafety() {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://localhost:5000/api/buspass/sos",
+        "${process.env.REACT_APP_API_URL}/api/buspass/sos",
         {
           message: "Emergency SOS Alert",
           location: location,

@@ -39,7 +39,7 @@ function AdminDashboard() {
       try {
         const token = localStorage.getItem("token");
         const res = await axios.get(
-          "http://localhost:5000/api/admin/dashboard",
+          "${process.env.REACT_APP_API_URL}/api/admin/dashboard",
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setDashboardStats(res.data.data);
@@ -52,7 +52,7 @@ function AdminDashboard() {
       try {
         setLoading(true);
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/buspass", {
+        const res = await axios.get("${process.env.REACT_APP_API_URL}/api/buspass", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setPassData(res.data.data);
@@ -66,7 +66,7 @@ function AdminDashboard() {
     const fetchEmergencies = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/emergency", {
+        const res = await axios.get("${process.env.REACT_APP_API_URL}/api/emergency", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setEmergencies(res.data.data);
@@ -110,7 +110,7 @@ function AdminDashboard() {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://localhost:5000/api/emergency/${id}/resolve`,
+        `${process.env.REACT_APP_API_URL}/api/emergency/${id}/resolve`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -129,7 +129,7 @@ function AdminDashboard() {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://localhost:5000/api/buspass/${id}/verify-document`,
+        `${process.env.REACT_APP_API_URL}/api/buspass/${id}/verify-document`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -171,7 +171,7 @@ function AdminDashboard() {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://localhost:5000/api/buspass/${id}/approve`,
+        `${process.env.REACT_APP_API_URL}/api/buspass/${id}/approve`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -229,7 +229,7 @@ function AdminDashboard() {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://localhost:5000/api/buspass/${id}/reject`,
+        `${process.env.REACT_APP_API_URL}/api/buspass/${id}/reject`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -548,7 +548,7 @@ function AdminDashboard() {
                   className="view-btn"
                   onClick={() =>
                     window.open(
-                      `http://localhost:5000/${selectedApplication.document}`,
+                      `${process.env.REACT_APP_API_URL}/${selectedApplication.document}`,
                       "_blank"
                     )
                   }

@@ -35,7 +35,7 @@ function AdminApplications() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://localhost:5000/api/buspass/pending",
+        "${process.env.REACT_APP_API_URL}/api/buspass/pending",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -66,7 +66,7 @@ function AdminApplications() {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://localhost:5000/api/buspass/${id}/verify-document`,
+        `${process.env.REACT_APP_API_URL}/api/buspass/${id}/verify-document`,
         {},
         {
           headers: {
@@ -113,7 +113,7 @@ function AdminApplications() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        `http://localhost:5000/api/buspass/${id}/approve`,
+        `${process.env.REACT_APP_API_URL}/api/buspass/${id}/approve`,
         {},
         {
           headers: {
@@ -162,7 +162,7 @@ function AdminApplications() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        `http://localhost:5000/api/buspass/${id}/reject`,
+        `${process.env.REACT_APP_API_URL}/api/buspass/${id}/reject`,
         {},
         {
           headers: {
@@ -368,7 +368,7 @@ function AdminApplications() {
                   className="view-btn"
                   onClick={() =>
                     window.open(
-                      `http://localhost:5000/${selectedApplication.document}`,
+                      `${process.env.REACT_APP_API_URL}/${selectedApplication.document}`,
                       "_blank"
                     )
                   }

@@ -23,7 +23,7 @@ function Sidebar() {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:5000/api/users/logout",
+        "${process.env.REACT_APP_API_URL}/api/users/logout",
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

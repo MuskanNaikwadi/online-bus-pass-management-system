@@ -31,7 +31,7 @@ function EmergencyApplications() {
       setLoading(true);
       const token = localStorage.getItem("token");
 
-      const res = await axios.get("http://localhost:5000/api/emergency", {
+      const res = await axios.get("${process.env.REACT_APP_API_URL}/api/emergency", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -63,7 +63,7 @@ function EmergencyApplications() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        `http://localhost:5000/api/emergency/${id}/resolve`,
+        `${process.env.REACT_APP_API_URL}/api/emergency/${id}/resolve`,
         {},
         {
           headers: {

@@ -51,7 +51,7 @@ function Notifications() {
 
       // ✅ correct endpoint — user-specific notifications, not admin's global list
       const res = await axios.get(
-        "http://localhost:5000/api/buspass/user-notifications",
+        "${process.env.REACT_APP_API_URL}/api/buspass/user-notifications",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -71,7 +71,7 @@ function Notifications() {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://localhost:5000/api/buspass/notifications/${id}/read`,
+        `${process.env.REACT_APP_API_URL}/api/buspass/notifications/${id}/read`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -88,7 +88,7 @@ function Notifications() {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        "http://localhost:5000/api/buspass/notifications/read-all",
+        "${process.env.REACT_APP_API_URL}/api/buspass/notifications/read-all",
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

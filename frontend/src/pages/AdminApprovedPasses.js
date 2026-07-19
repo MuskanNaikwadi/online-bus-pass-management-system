@@ -28,7 +28,7 @@ function AdminApprovedPasses() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://localhost:5000/api/buspass/approved",
+        "${process.env.REACT_APP_API_URL}/api/buspass/approved",
         {
           headers: {
             Authorization: `Bearer ${token}`,

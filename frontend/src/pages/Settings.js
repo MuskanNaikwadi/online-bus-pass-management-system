@@ -42,7 +42,7 @@ function Settings() {
       const token = localStorage.getItem("token");
 
       const res = await axios.put(
-        "http://localhost:5000/api/buspass/settings",
+        "${process.env.REACT_APP_API_URL}/api/buspass/settings",
         {
           darkMode,
           notifications,

@@ -15,7 +15,7 @@ function VerifyPass() {
     const fetchPass = async () => {
         try {
             const res = await axios.get(
-                `http://localhost:5000/api/buspass/verify/${id}`
+                `${process.env.REACT_APP_API_URL}/api/buspass/verify/${id}`
             );
 
             console.log("Response:", res.data);

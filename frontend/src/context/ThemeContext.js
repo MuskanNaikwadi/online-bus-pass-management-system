@@ -20,7 +20,7 @@ export function ThemeProvider({ children }) {
         const token = localStorage.getItem("token");
         if (token) {
           await axios.put(
-            "http://localhost:5000/api/buspass/settings",
+            "${process.env.REACT_APP_API_URL}/api/buspass/settings",
             { darkMode: value },
             { headers: { Authorization: `Bearer ${token}` } }
           );

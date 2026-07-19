@@ -22,7 +22,7 @@ export function UserProvider({ children }) {
         return;
       }
 
-      const res = await axios.get("http://localhost:5000/api/users/me", {
+      const res = await axios.get("${process.env.REACT_APP_API_URL}/api/users/me", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -56,5 +56,5 @@ export function useUser() {
 // ✅ single helper for photo URL — use everywhere instead of hardcoding the path
 export function getPhotoUrl(photo) {
   if (!photo) return null;
-  return `http://localhost:5000/uploads/${photo}`;
+  return `${process.env.REACT_APP_API_URL}/uploads/${photo}`;
 }

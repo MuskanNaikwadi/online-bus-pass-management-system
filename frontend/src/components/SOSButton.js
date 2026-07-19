@@ -29,7 +29,7 @@ function SOSButton() {
                     const token = localStorage.getItem("token");
 
                     await axios.post(
-                        "http://localhost:5000/api/emergency",
+                        "${process.env.REACT_APP_API_URL}/api/emergency",
                         {
                             latitude: position.coords.latitude,
                             longitude: position.coords.longitude,

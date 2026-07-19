@@ -53,7 +53,7 @@ function AdminProfile() {
       const token = localStorage.getItem("token");
 
       const res = await axios.put(
-        "http://localhost:5000/api/users/update-profile",
+        "${process.env.REACT_APP_API_URL}/api/users/update-profile",
         {
           name: profile.name,
           email: profile.email,
@@ -101,7 +101,7 @@ function AdminProfile() {
       const token = localStorage.getItem("token");
 
       const res = await axios.put(
-        "http://localhost:5000/api/users/change-password",
+        "${process.env.REACT_APP_API_URL}/api/users/change-password",
         {
           currentPassword: passwordData.currentPassword,
           newPassword: passwordData.newPassword,
@@ -145,7 +145,7 @@ function AdminProfile() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        "http://localhost:5000/api/users/upload-photo",
+        "${process.env.REACT_APP_API_URL}/api/users/upload-photo",
         formData,
         {
           headers: {
@@ -174,7 +174,7 @@ function AdminProfile() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        "http://localhost:5000/api/users/delete-photo",
+        "${process.env.REACT_APP_API_URL}/api/users/delete-photo",
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

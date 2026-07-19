@@ -15,7 +15,7 @@ function Stats() {
   const fetchStats = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/buspass/stats"
+        "${process.env.REACT_APP_API_URL}/api/buspass/stats"
       );
 
 
