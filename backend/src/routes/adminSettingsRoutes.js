@@ -8,7 +8,7 @@ const {
   updatePassword,
   updateNotifications,
   updateSystemSettings,
-} = require("../controllers/adminSettingsController");
+} = require("../controllers/AdminSettingsController");
 
 router.get("/settings", protect, isAdmin, getSettings);
 router.put("/settings/profile", protect, isAdmin, updateProfile);
