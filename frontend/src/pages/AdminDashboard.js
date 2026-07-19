@@ -24,13 +24,6 @@ function AdminDashboard() {
   const [documentVerified, setDocumentVerified] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [dashboardStats, setDashboardStats] = useState({
-    totalUsers: 0,
-    activePasses: 0,
-    pendingPasses: 0,
-    rejectedPasses: 0,
-    emergencyCount: 0,
-  });
   const [search, setSearch] = useState("");
 
   useEffect(() => {

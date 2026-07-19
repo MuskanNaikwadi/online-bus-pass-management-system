@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import AdminSidebar from "../components/AdminSidebar";
-import { useNavigate } from "react-router-dom";
 import {
   FaCamera,
   FaEdit,

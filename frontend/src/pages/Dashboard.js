@@ -26,7 +26,6 @@ function Dashboard() {
   // ---- derived values (multi-pass safe) ----
   const activePasses = passData.filter((p) => p.status === "Active");
   const pendingPasses = passData.filter((p) => p.status === "Pending");
-  const totalPasses = passData.length;
   const hasPass = activePasses.length > 0; // ✅ fixed: was undefined before
 
   const selectedPass =
@@ -105,22 +104,6 @@ function Dashboard() {
       alert(`⚠️ Your Bus Pass will expire in ${daysRemaining} day(s).`);
     }
   }, [selectedPass, daysRemaining]);
-
-  const handleLogout = async () => {
-    try {
-      const token = localStorage.getItem("token");
-      await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/users/logout`,
-        {},
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
-    } catch (error) {
-      console.log(error);
-    } finally {
-      localStorage.clear();
-      window.location.href = "/login";
-    }
-  };
 
   return (
     <div className="dashboard-container">

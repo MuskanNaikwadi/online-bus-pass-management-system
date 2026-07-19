@@ -145,7 +145,7 @@ function ApplyPass() {
   // ---- Validate the selected payment method's fields before "charging" ----
   const validatePaymentMethod = () => {
     if (paymentMethod === "upi") {
-      if (!upiId || !/^[\w.\-]+@[\w]+$/.test(upiId)) {
+      if (!upiId || !/^[\w.-]+@[\w]+$/.test(upiId)) {
         return "Please enter a valid UPI ID (e.g. name@bank)";
       }
     } else if (paymentMethod === "card") {
