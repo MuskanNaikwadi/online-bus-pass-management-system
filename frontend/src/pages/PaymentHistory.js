@@ -46,7 +46,7 @@ function PaymentHistory() {
             const token = localStorage.getItem("token");
 
             const res = await axios.get(
-                "${process.env.REACT_APP_API_URL}/api/buspass/payment-history",
+                `${process.env.REACT_APP_API_URL}/api/buspass/payment-history`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,

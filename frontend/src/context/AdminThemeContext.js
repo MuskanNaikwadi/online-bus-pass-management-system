@@ -20,7 +20,7 @@ export function AdminThemeProvider({ children }) {
         const token = localStorage.getItem("token");
         if (token) {
           await axios.put(
-            "${process.env.REACT_APP_API_URL}/api/users/admin-settings",
+            `${process.env.REACT_APP_API_URL}/api/users/admin-settings`,
             { darkMode: value },
             { headers: { Authorization: `Bearer ${token}` } }
           );

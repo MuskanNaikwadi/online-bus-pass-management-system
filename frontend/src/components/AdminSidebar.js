@@ -10,7 +10,6 @@ import {
   FaBell,
   FaUser,
   FaCog,
-  FaSignOutAlt,
 } from "react-icons/fa";
 import { useUser, getPhotoUrl } from "../context/UserContext";
 
@@ -18,7 +17,7 @@ function AdminSidebar() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { user, setUser } = useUser();
+  const { user } = useUser();
 
   const handleLogout = async () => {
     const result = await Swal.fire({
@@ -36,7 +35,7 @@ function AdminSidebar() {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "${process.env.REACT_APP_API_URL}/api/users/logout",
+        `${process.env.REACT_APP_API_URL}/api/users/logout`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

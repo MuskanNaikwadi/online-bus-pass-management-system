@@ -17,7 +17,7 @@ export function AdminProvider({ children }) {
       const token = localStorage.getItem("token");
       if (!token) return;
 
-      const res = await axios.get("${process.env.REACT_APP_API_URL}/api/admin/profile", {
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/admin/profile`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

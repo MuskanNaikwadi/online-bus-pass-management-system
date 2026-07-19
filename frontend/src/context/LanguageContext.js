@@ -21,7 +21,7 @@ export function LanguageProvider({ children }) {
         const token = localStorage.getItem("token");
         if (token) {
           await axios.put(
-            "${process.env.REACT_APP_API_URL}/api/buspass/settings",
+            `${process.env.REACT_APP_API_URL}/api/buspass/settings`,
             { language: langCode },
             { headers: { Authorization: `Bearer ${token}` } }
           );

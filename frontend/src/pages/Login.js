@@ -6,9 +6,6 @@ import { useUser } from "../context/UserContext";
 import Swal from "sweetalert2";
 import "./login.css";
 function Login() {
-  const navigate = useNavigate();
-  const { refreshUser, setUser } = useUser();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -16,7 +13,7 @@ function Login() {
   const handleLogin = async () => {
     try {
       const response = await axios.post(
-        "${process.env.REACT_APP_API_URL}/api/users/login",
+        `${process.env.REACT_APP_API_URL}/api/users/login`,
         {
           email,
           password,

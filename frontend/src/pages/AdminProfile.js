@@ -15,7 +15,6 @@ import "./AdminProfile.css";
 import { useUser, getPhotoUrl } from "../context/UserContext";
 
 function AdminProfile() {
-  const navigate = useNavigate();
 
   // ✅ same UserContext as regular users — but since it's scoped by JWT token,
   // an admin only ever sees/edits their OWN document. No cross-user effect possible.
@@ -53,7 +52,7 @@ function AdminProfile() {
       const token = localStorage.getItem("token");
 
       const res = await axios.put(
-        "${process.env.REACT_APP_API_URL}/api/users/update-profile",
+        `${process.env.REACT_APP_API_URL}/api/users/me`,
         {
           name: profile.name,
           email: profile.email,
@@ -101,7 +100,7 @@ function AdminProfile() {
       const token = localStorage.getItem("token");
 
       const res = await axios.put(
-        "${process.env.REACT_APP_API_URL}/api/users/change-password",
+        `${process.env.REACT_APP_API_URL}/api/users/change-password`,
         {
           currentPassword: passwordData.currentPassword,
           newPassword: passwordData.newPassword,
@@ -145,7 +144,7 @@ function AdminProfile() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        "${process.env.REACT_APP_API_URL}/api/users/upload-photo",
+        `${process.env.REACT_APP_API_URL}/api/users/upload-photo`,
         formData,
         {
           headers: {
@@ -174,7 +173,7 @@ function AdminProfile() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        "${process.env.REACT_APP_API_URL}/api/users/delete-photo",
+        `${process.env.REACT_APP_API_URL}/api/users/delete-photo`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

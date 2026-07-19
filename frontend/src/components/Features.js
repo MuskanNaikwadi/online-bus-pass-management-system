@@ -1,6 +1,5 @@
 import {
   FaQrcode,
-  FaBus,
   FaCreditCard,
   FaShieldAlt,
   FaBell,

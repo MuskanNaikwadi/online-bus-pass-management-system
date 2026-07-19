@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./AdminDashboard.css";
 import {
-  FaUsers,
   FaBus,
   FaCheckCircle,
   FaTimesCircle,
@@ -39,7 +38,7 @@ function AdminDashboard() {
       try {
         const token = localStorage.getItem("token");
         const res = await axios.get(
-          "${process.env.REACT_APP_API_URL}/api/admin/dashboard",
+          `${process.env.REACT_APP_API_URL}/api/admin/dashboard`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setDashboardStats(res.data.data);
@@ -52,7 +51,7 @@ function AdminDashboard() {
       try {
         setLoading(true);
         const token = localStorage.getItem("token");
-        const res = await axios.get("${process.env.REACT_APP_API_URL}/api/buspass", {
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/buspass`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setPassData(res.data.data);
@@ -66,7 +65,7 @@ function AdminDashboard() {
     const fetchEmergencies = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("${process.env.REACT_APP_API_URL}/api/emergency", {
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/emergency`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setEmergencies(res.data.data);

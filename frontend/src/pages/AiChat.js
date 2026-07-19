@@ -14,7 +14,7 @@ function AiChat() {
         setLoading(true);
 
         try {
-            const res = await axios.post("${process.env.REACT_APP_API_URL}/api/chat", {
+            const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/chat`, {
                 message,
             });
 

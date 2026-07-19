@@ -1,8 +1,6 @@
 import SOSButton from "./SOSButton";
 import {
   FaShieldAlt,
-  FaPhoneAlt,
-  FaMapMarkedAlt,
   FaCheckCircle
 } from "react-icons/fa";
 

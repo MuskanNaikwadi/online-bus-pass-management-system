@@ -130,7 +130,7 @@ function ApplyPass() {
     }
 
     const res = await axios.post(
-      "${process.env.REACT_APP_API_URL}/api/buspass",
+      `${process.env.REACT_APP_API_URL}/api/buspass`,
       formData,
       {
         headers: {

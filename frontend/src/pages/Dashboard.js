@@ -50,7 +50,7 @@ function Dashboard() {
   const fetchMyPasses = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("${process.env.REACT_APP_API_URL}/api/buspass/my", {
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/buspass/my`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -110,7 +110,7 @@ function Dashboard() {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "${process.env.REACT_APP_API_URL}/api/users/logout",
+        `${process.env.REACT_APP_API_URL}/api/users/logout`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

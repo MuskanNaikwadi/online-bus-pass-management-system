@@ -46,7 +46,7 @@ function AdminSettings() {
   const fetchAdminSettings = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("${process.env.REACT_APP_API_URL}/api/users/me", {
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/users/me`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -70,7 +70,7 @@ function AdminSettings() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        "${process.env.REACT_APP_API_URL}/api/users/admin-settings",
+        `${process.env.REACT_APP_API_URL}/api/users/admin-settings`,
         {
           darkMode,
           language,

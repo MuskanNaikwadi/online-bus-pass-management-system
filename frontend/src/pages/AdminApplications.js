@@ -35,7 +35,7 @@ function AdminApplications() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "${process.env.REACT_APP_API_URL}/api/buspass/pending",
+        `${process.env.REACT_APP_API_URL}/api/buspass/pending`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

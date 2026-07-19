@@ -31,7 +31,7 @@ function EmergencyApplications() {
       setLoading(true);
       const token = localStorage.getItem("token");
 
-      const res = await axios.get("${process.env.REACT_APP_API_URL}/api/emergency", {
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/emergency`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

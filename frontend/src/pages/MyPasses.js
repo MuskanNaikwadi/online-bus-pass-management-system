@@ -36,7 +36,7 @@ function MyPasses() {
         const token = localStorage.getItem("token");
 
         const res = await axios.get(
-          "${process.env.REACT_APP_API_URL}/api/buspass/my",
+          `${process.env.REACT_APP_API_URL}/api/buspass/my`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
