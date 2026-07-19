@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import bgImage from "../assets/background/login.png";
 import axios from "axios";
-import { useUser } from "../context/UserContext";
 import Swal from "sweetalert2";
 import "./login.css";
 function Login() {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");

@@ -7,6 +7,7 @@ function VerifyPass() {
     const { id } = useParams();
     const [pass, setPass] = useState(null);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         console.log("ID:", id);
         fetchPass();
