@@ -10,13 +10,10 @@ const path = require("path");
 const notificationRoutes = require("./routes/notificationRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const adminSettingsRoutes = require("./routes/adminSettingsRoutes");
-
 const emergencyRoutes = require("./routes/emergencyRoutes");
-//import AiChat from "./pages/AiChat";
 const OpenAI = require("openai");
 
 dotenv.config();
-
 connectDB();
 
 const app = express();
@@ -25,10 +22,13 @@ app.use(cors({
   origin: [
     "http://localhost:3000",
     "http://localhost:3001",
+    "https://ebuspass.vercel.app",
+    "https://online-bus-pass-management-system-hyqx-creare-lunchers1.vercel.app",
     process.env.FRONTEND_URL
   ],
   credentials: true
 }));
+
 app.use("/api/notifications", notificationRoutes);
 app.use(express.json());
 app.use("/api/users", userRoutes);
@@ -50,7 +50,6 @@ const client = new OpenAI({
 app.post("/api/chat", async (req, res) => {
   try {
     const { message } = req.body;
-
     const completion = await client.chat.completions.create({
       model: "llama-3.3-70b-versatile",
       messages: [
@@ -64,22 +63,18 @@ app.post("/api/chat", async (req, res) => {
         },
       ],
     });
-
     res.json({
       reply: completion.choices[0].message.content,
     });
   } catch (err) {
     console.error(err);
-
     res.status(500).json({
       reply: err.message,
     });
   }
 });
 
-
 const PORT = process.env.PORT || 5000;
-
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
